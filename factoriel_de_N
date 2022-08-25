@@ -1,0 +1,49 @@
+from sre_compile import isstring
+from tkinter import *
+from math import factorial
+
+def overture_du_navigateur():
+    n=int(input.get())
+    label3['text']="Factoriel de " + str(n)
+    input2.delete(0,END)
+    input2.insert(0,factorial(n))
+
+fenetre=Tk()
+
+# je configure ma fenetre graphique
+# definie ma couleur de fond pour la fenetre et le reste des composants
+background="#41B77E"
+# definie ma couleur du texte pour les composants
+fg="white"
+
+fenetre.title("Factoriel de N")
+fenetre.geometry("720x580")
+fenetre.config(background=background)
+
+# je creer mon label
+label=Label(fenetre,text="Entrer le nombre",font=('Helvetica',30),bg=background,fg="white")
+label.pack()
+# je creer mon label2
+label2=Label(fenetre,text="Ex: 3",font=('Helvetica',15),bg=background,fg="yellow")
+label2.pack()
+
+# je cree mon input
+input=Entry(fenetre,font=('Helvetica',30),bg=background,fg="white")
+input.pack(pady=12)
+# je creer mon label2
+label3=Label(fenetre,text="Factoriel",font=('Helvetica',15),bg=background,fg="yellow")
+label3.pack()
+# je cree mon input2
+input2=Entry(fenetre,font=('Helvetica',30),bg=background,fg="white")
+input2.pack(pady=12)
+
+# je cree ma frame (une boite qui contiendra mes boutons)
+frame_1=Frame(fenetre,bg='white')
+
+buton_pass=Button(frame_1,text='Calculer',padx=40,pady=20,command=overture_du_navigateur).pack(side=LEFT)
+buton_pass=Button(frame_1,text='Effacer',padx=40,pady=20,command=lambda:input.delete(0,END)).pack(side=LEFT)
+buton_pass=Button(frame_1,text='Enregistrer',padx=40,pady=20).pack(side=LEFT)
+
+frame_1.pack()
+
+fenetre.mainloop()
