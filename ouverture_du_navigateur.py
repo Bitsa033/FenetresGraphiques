@@ -9,6 +9,7 @@ def overture_du_navigateur():
     elif len(mon_domaine)<10:
         label['text']='Votre nom de domaine est invalide !'
     else:
+        label['text']='Ouverture du lien : ' + mon_domaine
         webbrowser.open("https:"+mon_domaine)
 
 fenetre=Tk()
