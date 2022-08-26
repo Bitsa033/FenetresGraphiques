@@ -1,8 +1,5 @@
-from ctypes.wintypes import SIZE
 from sqlite3 import Date
-from sre_compile import isstring
 from tkinter import *
-from math import factorial
 
 def overture_du_navigateur():
     n=int(input.get())
